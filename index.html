@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Best Technical Education University | Established in 1997 I.K.Gujral Punjab Technical University : Jalandhar</title>
+
+  <link rel="icon" href="https://ptuexamsresult.com/download.gif" type="image/gif" />
+  <meta name="description" content="Best Technical Education University | Established in 1997 I.K.Gujral Punjab Technical University : Jalandhar" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-material-ui/material-ui.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <style>
+    *{box-sizing:border-box;}
+    html,body{
+      margin:0;
+      padding:0;
+      height:100%;
+      font-family:"Roboto","Helvetica",Arial,sans-serif;
+      background:#fff;
+    }
+
+    .container{
+      display:flex;
+      height:100vh;
+      width:100%;
+    }
+
+    /* Left image 60% */
+    .left{
+      flex:0 0 60%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      overflow:hidden;
+    }
+    .left img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    /* Right login 40% */
+    .right{
+      flex:0 0 40%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:#fff;
+      padding:40px;
+    }
+
+    .card{
+      width:100%;
+      max-width:400px;
+      text-align:center;
+    }
+
+    .logo{
+      width:86px;
+      height:auto;
+      margin:6px auto;
+      display:block;
+    }
+
+    h1.title{
+      font-size:22px;
+      margin:6px 0 20px;
+      font-weight:500;
+      color:#222;
+    }
+
+    .form-group{position:relative;margin-bottom:18px;}
+    input[type="text"],input[type="password"]{
+      width:100%;padding:14px 12px;font-size:15px;
+      border-radius:4px;border:1.2px solid #d0d0d0;
+      transition:border-color .15s,box-shadow .15s;
+      background:#fff;
+    }
+    input:focus{outline:none;border-color:#3949ab;box-shadow:0 0 0 3px rgba(57,73,171,0.06);}
+    .form-group label{
+      position:absolute;left:12px;top:12px;padding:0 4px;color:#7b7b7b;background:#fff;
+      font-size:13px;pointer-events:none;transition:all .12s ease;
+    }
+    input:focus + label,input:not(:placeholder-shown) + label{
+      top:-8px;left:10px;font-size:12px;color:#3949ab;
+    }
+
+    .captcha-line{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+    #captchaCanvas{width:110px;height:40px;border:1px solid #ddd;border-radius:3px;background:#f5f5f5;}
+    .captcha-input{
+      flex:1;padding:12px;border:1px solid #ccc;border-radius:4px;font-size:15px;
+      transition:border-color .15s;
+    }
+    .captcha-input:focus{outline:none;border-color:#3949ab;box-shadow:0 0 0 3px rgba(57,73,171,0.06);}
+    .reload{background:transparent;border:none;color:#2f4bd6;font-size:22px;cursor:pointer;margin-left:6px;}
+
+    .signin-btn{
+      width:100%;background:#3949ab;color:#fff;border:none;
+      padding:12px 16px;border-radius:4px;font-weight:700;margin-top:8px;cursor:pointer;transition:background .12s;
+    }
+    .signin-btn:hover{background:#2f3f98;}
+
+    .small-row{display:flex;justify-content:flex-end;margin-top:12px;}
+    .small-row a{color:#2f4bd6;text-decoration:none;font-size:13px;}
+
+    .ann-btn{
+      width:100%;margin-top:12px;padding:9px 12px;border-radius:4px;background:transparent;
+      color:#e91e63;border:1.5px solid #e91e63;font-weight:600;cursor:pointer;
+      transition:background .15s,color .15s;
+    }
+    .ann-btn:hover{background:#e91e63;color:#fff;}
+
+    footer{margin-top:22px;font-size:13px;color:#8b8b8b;cursor:pointer;}
+    footer:hover{text-decoration:underline;}
+
+    @media(max-width:960px){
+      .container{flex-direction:column;}
+      .left{display:none;}
+      .right{flex:1;padding:25px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <img src="https://ptuexamresults9-alt.github.io/255885/image.png" alt="Campus Image">
+    </div>
+
+    <div class="right">
+      <div class="card">
+        <img src="https://ptuexamsresult.com/download.gif" alt="logo" class="logo" />
+        <h1 class="title">Sign in</h1>
+
+        <form id="loginForm" autocomplete="off" novalidate>
+          <div class="form-group">
+            <input id="username" type="text" placeholder=" " required />
+            <label for="username">UserId *</label>
+          </div>
+
+          <div class="form-group">
+            <input id="password" type="password" placeholder=" " required />
+            <label for="password">Password *</label>
+          </div>
+
+          <div class="captcha-line">
+            <canvas id="captchaCanvas" width="110" height="40"></canvas>
+            <input id="captchaInput" class="captcha-input" type="text" placeholder="Enter Captcha *" required />
+            <button type="button" class="reload" id="reloadCaptcha" title="Reload">&#x21bb;</button>
+          </div>
+
+          <button type="submit" class="signin-btn">SIGN IN</button>
+        </form>
+
+        <div class="small-row">
+          <a href="#" id="resetLink">Reset Password</a>
+        </div>
+
+        <button class="ann-btn" id="annBtn">ANNOUNCEMENTS</button>
+
+        <footer id="copyLink">Copyright © IK Gujral Punjab Technical University 2025.</footer>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* Multi-user login list */
+    const USERS = [
+      { username:"215845", password:"Ro52hu14", redirect:"https://ptuexamsresult.com/ptu%20exam/" },
+      { username:"238456", password:"Mu52sdS", redirect:"https://ptuexamsresult.com/Student%20id/index%20(3).html" },
+      { username:"1003", password:"ghi", redirect:"user3.html" }
+    ];
+
+    /* Captcha */
+    function drawCaptcha(text){
+      const c=document.getElementById("captchaCanvas"),x=c.getContext("2d");
+      x.clearRect(0,0,c.width,c.height);
+      x.fillStyle="#fff";x.fillRect(0,0,c.width,c.height);
+      x.font="700 20px Arial";x.fillStyle="#000";
+      let xp=8;
+      for(let i=0;i<text.length;i++){
+        const y=26+Math.random()*4-2,rot=Math.random()*0.2-0.1;
+        x.save();x.translate(xp,y);x.rotate(rot);x.fillText(text[i],0,0);x.restore();xp+=16;
+      }
+      c.dataset.captcha=text;
+    }
+    function genCap(){
+      const ch="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";let t="";
+      for(let i=0;i<6;i++)t+=ch[Math.floor(Math.random()*ch.length)];
+      drawCaptcha(t);
+    }
+    document.getElementById("reloadCaptcha").addEventListener("click",genCap);
+    genCap();
+
+    /* Login validation */
+    document.getElementById("loginForm").addEventListener("submit",e=>{
+      e.preventDefault();
+      const u=document.getElementById("username").value.trim(),
+            p=document.getElementById("password").value.trim(),
+            ci=document.getElementById("captchaInput").value.trim(),
+            cap=document.getElementById("captchaCanvas").dataset.captcha;
+
+      if(!u||!p||!ci){Swal.fire("Error","Please fill in all fields.","error");return;}
+      if(ci.toUpperCase()!==cap.toUpperCase()){
+        Swal.fire("Error","Invalid Captcha, please try again.","error");
+        genCap();return;
+      }
+      const f=USERS.find(x=>x.username===u&&x.password===p);
+      if(f){
+        Swal.fire({icon:"success",title:"Login Successful!",text:`Welcome ${u}`,timer:1200,showConfirmButton:false})
+        .then(()=>window.location.href=f.redirect);
+      }else{
+        Swal.fire("Error","Invalid User ID or Password.","error");
+        genCap();
+      }
+    });
+
+    /* Sweet error for Reset Password */
+    document.getElementById("resetLink").addEventListener("click",e=>{
+      e.preventDefault();
+      Swal.fire({icon:"error",title:"Server Error",text:"Reset password service temporarily unavailable."});
+    });
+
+    /* Sweet error for Announcements */
+    document.getElementById("annBtn").addEventListener("click",()=>{
+      Swal.fire({icon:"error",title:"Server Error",text:"No announcements available currently."});
+    });
+
+    /* Redirect copyright to PTU site */
+    document.getElementById("copyLink").addEventListener("click",()=>{
+      window.open("https://ptu.ac.in/","_blank");
+    });
+  </script>
+</body>
+</html>
